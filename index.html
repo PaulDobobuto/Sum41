@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Sum 41</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Hello Skumfuk! Do you want some Sum?</h1>
+        <button onclick="mostrarSumAleatorio()">I have my hands Together, Make the noise!</button>
+        <div id="haiku"></div>
+    </div>
+
+    <script src="script.js">
+     <!-- Etiqueta de audio -->
+    <audio id="miAudio" preload="auto"></audio>
+
+    
+        // Array de rutas de archivos de audio
+        const audios = [
+            'audio/Sum 41 - I Cant Wait.mp3',
+            'audio/Sum 41 - Landmines.mp3',
+            'audio/Sum 41 - Preparasi A Salire.mp3',
+            'audio/Sum 41 - Rise Up.mp3',
+            'audio/Sum 41 - Waiting On A Twist Of Fate.mp3',
+            // Agrega más rutas de audio según sea necesario
+        ];
+
+        // Función para seleccionar un audio aleatorio y reproducirlo
+        window.onload = function() {
+            const audio = document.getElementById('miAudio');
+            const audioAleatorio = audios[Math.floor(Math.random() * audios.length)];
+            audio.src = audioAleatorio;
+
+            audio.play().catch(function(error) {
+                console.log('Error al intentar reproducir el audio:', error);
+            });
+        };
+    </script>
+</body>
+</html>
